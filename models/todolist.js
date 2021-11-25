@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const assignmentModel = new mongoose.Schema({
+const taskModel = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   priority: { type: String, required: true },
@@ -9,6 +9,6 @@ const assignmentModel = new mongoose.Schema({
   creation_date: { type: Date, default: Date.now },
 });
 
-const TodoList = mongoose.model("TodoList", assignmentModel);
+const TodoList = mongoose.model("TodoList", taskModel);
 
 module.exports = TodoList;

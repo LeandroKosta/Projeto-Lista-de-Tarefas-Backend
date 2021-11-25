@@ -1,11 +1,8 @@
 const mongoose = require("mongoose");
 
-const Conn = () => {
+const Conn = (user, pass, data) => {
   mongoose
-    .connect("mongodb://localhost:27017/todolist", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(`mongodb://${user}:${pass}@projetolistadetarefa-shard-00-00.p1ovi.mongodb.net:27017,projetolistadetarefa-shard-00-01.p1ovi.mongodb.net:27017,projetolistadetarefa-shard-00-02.p1ovi.mongodb.net:27017/${data}?ssl=true&replicaSet=atlas-y60afp-shard-0&authSource=admin&retryWrites=true&w=majority`)
     .then(() => {
       console.log("Conexão com o MongoDB executada com sucesso!");
     })
