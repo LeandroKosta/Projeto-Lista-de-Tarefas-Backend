@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
-//const cors = require('cors');
+const cors = require('cors');
 const TodoListRouter = require("./routes/todolist.routes");
 const Conn = require("./conn/conn");
 const app = express();
