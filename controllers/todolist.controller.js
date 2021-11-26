@@ -11,7 +11,7 @@ class todolistController {
 
   getTodoListById = async (req, res) => {
     const todolist = await todolistService.findById(req.params.id);
-    res.sen(todolist);
+    res.send(todolist);
   };
 
   createTodoList = async (req, res) => {
